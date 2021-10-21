@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "browser-sync": "browser-sync start --server --files index.html *.css",
-    "sass": "sass styles.scss styles.css",
-    "sass-watch": "sass --watch styles.scss styles.css",
+    "sass": "dart-sass styles.scss styles.css",
+    "sass-watch": "dart-sass --watch styles.scss styles.css",
     "dev": "concurrently npm:sass napm:sass-watch npm:browser-sync",
     "lint-scss": "stylelint styles.scss ./**/*.scss",
     "lint-css": "stylelint styles.css ./**/*.css"
