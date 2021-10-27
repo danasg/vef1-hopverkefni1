@@ -1,14 +1,8 @@
-
-
-@import 'styles/header-footer.scss';
-
-@import 'styles/frontpage.scss';
- 
-/* @import 'styles/product-order.scss';
-@import 'styles/product-list.scss';
-@import './styles/product-detail';  */
-
-
+@import 'styles/header-footer';
+@import 'styles/frontpage';
+@import 'styles/product-order';
+@import 'styles/product-list';
+@import './styles/product-detail';
 
 * {
   font-family: 'Lato', sans-serif;
