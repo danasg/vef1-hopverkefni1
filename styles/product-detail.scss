@@ -1,3 +1,11 @@
+.product-detail-header {
+  padding: 1em 1em 0;
+  position: relative;
+
+  @media (min-width: 803px) {
+    width: 100%;
+  }
+}
 
 a {
   color: #000;
