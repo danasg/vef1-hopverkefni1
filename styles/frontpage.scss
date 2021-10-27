@@ -6,6 +6,7 @@
 /* -------------------------------------------------------------------------- */
 
 $max-width: 1440px;
+$width: 100%;
 
 $color-text: #222;
 $color-text-secondary: #222;
@@ -15,8 +16,8 @@ $color-border: #ccc;
 // Letur stillingar
 $spacing: 1rem;
 $font-size: 16px;
-$font-family-base: 'Lato', Helvetica, Arial, sans-serif;
-$font-family-heading: 'Lato', Georgia, serif;
+$font-family-base: "Lato", Helvetica, Arial, sans-serif;
+$font-family-heading: "Lato", Georgia, serif;
 /* ath: skoða hvernig eigi að tengja font rétt */
 
 // Grid stillingar
@@ -27,22 +28,22 @@ $grid-offset: 20px;
 /* ath: af hverju þarf að setja scss breytu í css breytu með "interpolation", í stað þess að skrifa bara beint í? sbr texti osk: "Skilgreinum breytur sem sass breytur, en gerum einnig aðgengilegar sem css breytur" */
 
 :root {
-  --spacing: #{$spacing};
-  --max-width: #{$max-width};
+    --spacing: #{$spacing};
+    --max-width: #{$max-width};
+    --width: #{$width};
 
-  --color-text: #{$color-text};
-  --color-text-secondary: #222;
-  --color-link: #{$color-link};
-  --color-border: #{$color-border};
+    --color-text: #{$color-text};
+    --color-text-secondary: #222;
+    --color-link: #{$color-link};
+    --color-border: #{$color-border};
 
-  --font-size: #{$font-size};
-  --font-family-base: #{$font-family-base};
-  --font-family-heading: #{$font-family-heading};
+    --font-size: #{$font-size};
+    --font-family-base: #{$font-family-base};
+    --font-family-heading: #{$font-family-heading};
 
-  
-  --columns: #{$grid-columns};
-  --gutter: #{$grid-gutter};
-  --offset: #{$grid-offset};
+    --columns: #{$grid-columns};
+    --gutter: #{$grid-gutter};
+    --offset: #{$grid-offset};
 }
 
 /* -------------------------------------------------------------------------- */
@@ -51,57 +52,76 @@ $grid-offset: 20px;
 
 /* „reset“ til að fjarlægja margin og padding af öllu */
 * {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 /* bordex-box á allt */
 html {
-  box-sizing: border-box;
-  width: 100%; /* ath: hvaða áhrif hefur að setja widht og max-width á html element? */
-  justify-content: center;
+    box-sizing: border-box;
+    width: 100%; /* ath: hvaða áhrif hefur að setja widht og max-width á html element? */
+    justify-content: center;
 }
 
 /* og látum erfast niður */
-*, *:before, *:after {
-  box-sizing: inherit;
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
 }
 
 body {
-  width: 100%;
-  margin: 0 auto;
-  max-width: var(--max-width);
-  /* á frekar að nota scss breytur hér með interpolation? (skiptir máli hvaða röð config og base scss eru?*/
+    width: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+
+    /* á frekar að nota scss breytur hér með interpolation? (skiptir máli hvaða röð config og base scss eru? */
+    /* ath: ætti að setja max-with á body eða wrapper */
 }
 
 /* -------------------------------------------------------------------------- */
 /*                       @import 'styles/layout.scss'                       */
 /* -------------------------------------------------------------------------- */
 
-/* ath: í "mobile first" má raða öllum klösum í röð, þ.e. með og án media queries - eða á að safna öllum media queries neðst? */
+// Á eftir að paste-a hingað frá "styles-mobile-first.scss"
 
 
-.wrapper {
-  display: flex;
-  flex-direction: column;
+/* Naming grid-area before setting their layout */
+
+.header {
+    grid-area: header;
 }
-/* ath: should grid or flex be used for a grid on "mobile version" where only one column */
 
-/* nota postition: absolute */
+.main {
+    grid-area: main;
+}
 
-header {
-    display: flex;
-    padding: 0.5rem 0.55rem 0; /* rem=16px, figma sýnir 10 px */
+.footer {
+    grid-area: footer;
+}
 
-    position: absolute;
-    justify-content: space-between;
 
-    .header-left {
+
+
+@media (max-width: 500px) {
+    .wrapper {
         display: flex;
-
+        flex-direction: column;
     }
 
-    .header-right {
+    .header {
+        display: flex;
+        padding: 0.5rem 0.55rem 0; /* rem=16px, figma sýnir 10 px */
+
+        position: absolute;
+        justify-content: space-between;
+    }
+
+    .header__left {
+        display: flex;
+    }
+
+    .header__right {
         display: flex;
         align-items: center;
     }
@@ -110,110 +130,146 @@ header {
         padding-left: 1rem;
     }
 
-        
-    .svg__gear {
-
-        
-    }
-
-    h2 {
-        font-size: 1.5rem;
-    }
-
-    label {
+    .header__center {
         display: none;
     }
 
-    .links {
+    .header.links {
         display: none;
     }
-}
 
-.tilbodsvika {
-    height: 343px; /* ath: fæ ekki til að verða að réttri hæð */
-    background-image: url(../images/wires.jpg);
-    background-color: #cccccc; /* hvernig finn ég nákvæmlega litinn í sjálfri myndinni? */
-    background-repeat: no-repeat;
-    background-size: cover; /* background-size eða object-fit? */
-
-    h1 {
-        margin-top: 20%;
+    /* ath: hvernig á að halda menu icon hægra megin þegar details[open]? */
+    .header__right details[open] > summary {
+        position: absolute;
+        right: 0;
     }
 
-    h1, p {
+    details li {
+        font-size: 3rem;
+        align-content: center;
+    }
+
+    .tilbodsvika {
+        width: 100%;
+        height: 50vh; /* ath: fæ ekki til að verða að réttri hæð */
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-image: url(../images/wires.jpg);
+        background-color: #cccccc;
+        background-repeat: no-repeat;
+        background-size: cover; /* background-size eða object-fit? */
+        background-position: bottom;
+        opacity: 0.5;
+    }
+
+    h1,
+    p {
         text-align: center;
         align-items: center;
         /* ath: þarf að hafa h1, p nested inn í .tilbodsvika */
     }
-}
 
-.tilbodsvika-lysing {
-    display: flex;
-    flex-direction: column;
-
-    button {
-        width: 177px;
-        height: 44px;
-        margin: 2rem auto 1.5rem auto;
-        background-color: #6F4E37;
-        color: white;
-        border: none;
-        border-radius: 5px;
+    h1 {
+        margin-top: 20%;
+        font-size: 5rem;
+        /* ath: line-height: calc(0.8*var(line-height)); */
     }
 
-}
-
-.nyjustu-vorur  {
-    display: flex;
-    flex-direction: column;
-    background-color: #E1CEC2;
-    padding: 15px;
-
-    img {
-        width: 100%;
-        object-fit: contain;
+    p {
+        font-size: 2rem;
     }
 }
 
+/* ath: Hefur það áhrif að raða media queries fyrir hvert css statemnt eftir hvort öðru eða á að safna öllum media queries neðst? */
+/* ath: ætti að hafa @media (max-width: 500) utan um mobile-first, eða láta vera */
+/* ath: hvernig er best að haga min og max gildum í @media */
+/* ath: should grid or flex be used for a grid on "mobile version" where only one column */
 
 @media (min-width: 501px) {
-  .wrapper {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    /* grid-template-rows: 565px 520px 668px 520px 668px 233px; /* 233px röðin er footer. Það virðist ekki sambærileg röð fyrir header (í figma) */
-    gap: 20px;
-  
-    margin: 0 auto;
-  }
+    .wrapper {
+        // ath: Af hverju hættir að vera responsive þegar wrapper er með grid (12, 1fr)?
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: auto auto auto auto auto auto; // ath: þarf að setja grid-template-rows?
+        gap: var(--gutter); /* þarf gap þegar grid-temlate-columns er 100%? */
+
+        width: 100%;
+        max-width: var(--max-width);
+        margin: 0 auto;
+        padding: 0.5rem;
+    }
+
+    .header {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        /* þarf að setja width og max-width hér þegar það er á wrapper (og á body)? */
+        
+        grid-column: 1 / span 12;
+        grid-row: 1;
+        width: 100%;
+        max-width: var(--max-width);
+        margin-top: 0.25rem;
+    }
+
+    .header>.header__left { // hver er munurinn á selector bil . > ? Af hverju verður block við að setja . á milli?
+        display: flex;
+        grid-column: 1 / span 4;
 
 
-  .tilbodsvika-lysing {
-    grid-column: 1 / span 1;
-    grid-row: 2 / span 1; /* þarf að setja stillingu "1" á grid-row? */
-  }
+        h2 {
+            padding-left: 0.5rem;
+        }
+        
+
+    }
+
+    header > .header__center {
+        grid-column: 5 / span 4;
+
+        
+        input {
+            width: 20vw;
+        }
+    }
+
+    header > .header__links {
+        grid-column: 9 / span 3;
+
+    }
+
+    header > .header__right {
+        display: flex;
+        grid-column: 12 / span 1;
+
+    }
+
+    // .tilbodsvika {
+    //     grid-column: 1 / span 1;
+    //     grid-row: 1 / span 2;
+    //     width: 100%;
+    //     max-width: var(--max-width); /* af hverju þarf max-width þegar max-width er á .wrapper? */
+    //     height: auto;
 
 
-  .area-2 {
-    display: flex;
-    flex-wrap: wrap; /* af hverju virkar ekki flex-direction: column; */
+        
+    //         width: 100%;
+    //         height: 50vh; /* ath: fæ ekki til að verða að réttri hæð */
+    //         position: fixed;
+    //         top: 0;
+    //         left: 0;
+    //         background-image: url(../images/wires.jpg);
+    //         background-color: #cccccc;
+    //         background-repeat: no-repeat;
+    //         background-size: cover; /* background-size eða object-fit? */
+    //         background-position: bottom;
+    //         opacity: 0.5;
+
+
+    // }
+
+    // .tilbodsvika-lysing {
+    //     grid-column: 1 / span 12;
+    // }
+    
 }
-    .area-1 header {
-    position: absolute;
-    top: 176px;
-    text-align: center; 
-    /* hefði getað verið align-self: center */
-}
-
-.area-1 header h1 {
-    font-size: 80px; /* í figma er stærðin 160px */
-  }
-
-}
-
-
-
-
-/* ToDo: gera wire myndina hazy */
-
-
-
