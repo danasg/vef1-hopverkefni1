@@ -2,7 +2,7 @@
 
 This website is the first group project in vefforritun 1. It's repository is in Github and deployed in Netlify.
 
-npm install/n
+npm install\n
 npm run dev/n
 npm run lint-scss
 
