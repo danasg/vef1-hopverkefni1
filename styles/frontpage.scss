@@ -1,372 +1,204 @@
-/* Að mestu byggt á sýnilausn við verkefni 6 í vefforritun */
-/* ath: skiptir máli í hvaða röð base og config eru, þ.e. hvort breytur í config þurfi að koma fyrst? */
-
-/* -------------------------------------------------------------------------- */
-/*                        @import 'styles/config.scss'                        */
-/* -------------------------------------------------------------------------- */
-
-$max-width: 1440px;
-$width: 100%;
-
-$color-text: #222;
-$color-text-secondary: #222;
-$color-link: #069;
-$color-border: #ccc;
-
-// Letur stillingar
-$spacing: 1rem;
-$font-size: 16px;
-$font-family-base: "Lato", Helvetica, Arial, sans-serif;
-$font-family-heading: "Lato", Georgia, serif;
-/* ath: skoða hvernig eigi að tengja font rétt */
-
-// Grid stillingar
-$grid-columns: 12;
-$grid-gutter: 30px;
-$grid-offset: 20px;
-
-/* ath: af hverju þarf að setja scss breytu í css breytu með "interpolation", í stað þess að skrifa bara beint í? sbr texti osk: "Skilgreinum breytur sem sass breytur, en gerum einnig aðgengilegar sem css breytur" */
-
-:root {
-    --spacing: #{$spacing};
-    --max-width: #{$max-width};
-    --width: #{$width};
-
-    --color-text: #{$color-text};
-    --color-text-secondary: #222;
-    --color-link: #{$color-link};
-    --color-border: #{$color-border};
-
-    --font-size: #{$font-size};
-    --font-family-base: #{$font-family-base};
-    --font-family-heading: #{$font-family-heading};
-
-    --columns: #{$grid-columns};
-    --gutter: #{$grid-gutter};
-    --offset: #{$grid-offset};
+.frontpage-grid {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(12, 1fr);
+  margin: 2em auto;
+  max-width: 1440px;
+  width: calc(100% - (2 * 20px));
 }
 
-/* -------------------------------------------------------------------------- */
-/*                        @import 'styles/base.scss'                        */
-/* -------------------------------------------------------------------------- */
+.frontpage-background {
+  background-image: url('./images/wires.jpg');
+  background-position: center;
+  background-size: cover;
+  width: 100%;
 
-/* „reset“ til að fjarlægja margin og padding af öllu */
-* {
-    margin: 0;
-    padding: 0;
+  &-blur {
+    background-color: rgba(255, 255, 255, 0.5);
+  }
 }
 
-/* bordex-box á allt */
-html {
-    box-sizing: border-box;
-    width: 100%; /* ath: hvaða áhrif hefur að setja widht og max-width á html element? */
-    justify-content: center;
+.frontpage-deal {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: 4em 0 7em;
+
+  h1 {
+    font-size: 4em;
+  }
+
+  h2 {
+    font-size: 2em;
+    font-weight: 400;
+  }
 }
 
-/* og látum erfast niður */
-*,
-*:before,
-*:after {
-    box-sizing: inherit;
-}
+.frontpage-spotlight {
+  display: flex;
+  flex-direction: column;
+  grid-column: 1 / 13;
+  justify-content: space-between;
+  margin-bottom: 1em;
 
-body {
+  &-image {
+    grid-column: 1 / 13;
+    margin-bottom: 1em;
     width: 100%;
-    max-width: var(--max-width);
-    margin: 0 auto;
+  }
 
-    /* á frekar að nota scss breytur hér með interpolation? (skiptir máli hvaða röð config og base scss eru? */
-    /* ath: ætti að setja max-with á body eða wrapper */
-}
+  h2 {
+    font-size: 2em;
+    font-weight: 400;
+    margin-bottom: 1rem;
+  }
 
-/* -------------------------------------------------------------------------- */
-/*                       @import 'styles/layout.scss'                       */
-/* -------------------------------------------------------------------------- */
+  p {
+    font-size: 1.25em;
+    line-height: 2rem;
+  }
 
-// Á eftir að paste-a hingað frá "styles-mobile-first.scss"
-
-/* Mobile first útgáfa */
-
-
-.wrapper {
-    display: flex;
-    flex-direction: column;
-
-    @media (min-width: 500px) {
-       flex-direction: row;
-    }
-}
-
-
-
-.tilbodsvika__header {
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* ath: skoða Horizontal & Vertical Align á background-image í vertical og horizontal */
+  .button-view {
     align-items: center;
-
-    width: 100%;
-    height: 50vh; /* ath: fæ ekki til að verða að réttri hæð */
-    margin: 0 auto;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-image: url(../images/wires.jpg);
-    background-color: #cccccc;
-    background-repeat: no-repeat;
-    background-size: 100% 100%; /* ath: skoða betur með að fá stærðina rétta. background-size eða object-fit? */
-    background-position: bottom;
-    opacity: 0.5;
-}
-
-
-.tilbodsvika__lysing {
+    align-self: center;
+    background-color: #6f4e37;
+    border: 1px solid #3c2a1e;
+    border-radius: 5px;
+    box-sizing: border-box;
     display: flex;
-    width: 100%;
-    margin: 0 auto;
+    flex-direction: column;
+    margin-top: 2em;
+    padding: 10px 15px;
+  }
 
-    .text {
-        display: flex;
-        flex-direction: col;
-    }
-    
-    .image img {
-        width: 100%; 
-        
-    }
+  .button-view > a {
+    color: #fff;
+    font-size: 1em;
+    font-weight: bold;
+  }
 }
 
+.frontpage-products {
+  background-color: #e1cec2;
 
-@media (max-width: 500px) {
-    
+  &-grid {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(12, 1fr);
+    margin: 0 auto;
+    max-width: 1440px;
+    padding-bottom: 2em;
+    width: calc(100% - (2 * 20px));
+  }
 
-    .header {
-        display: flex;
-        padding: 0.5rem 0.55rem 0; /* rem=16px, figma sýnir 10 px */
+  h2 {
+    font-size: 2em;
+    grid-column: 1 / 13;
+    margin: 1rem 0;
+  }
 
-        position: absolute;
-        justify-content: space-between;
+  .product-card {
+    grid-column: 1 / 13;
+  }
+}
+
+@media (min-width: 700px) {
+  .frontpage-products {
+    .product-card {
+      grid-column: span 6;
     }
+  }
+}
 
-    .header__left {
-        display: flex;
-    }
+@media (min-width: 900px) {
+  .frontpage-spotlight {
+    grid-column: span 6;
+  }
 
-    .header__right {
-        display: flex;
-        align-items: center;
-    }
+  .frontpage-spotlight-image {
+    grid-column: span 6;
+  }
+}
 
-    .header-right__svg {
-        padding-left: 1rem;
-    }
-
-    .header__center {
-        display: none;
-    }
-
-    .header.links {
-        display: none;
-    }
-
-    /* ath: hvernig á að halda menu icon hægra megin þegar details[open]? */
-    .header__right details[open] > summary {
-        position: absolute;
-        right: 0;
-    }
-
-    details li {
-        font-size: 3rem;
-        align-content: center;
-    }
-
-    
-
-    h1,
-    p {
-        text-align: center;
-        align-items: center;
-        /* ath: þarf að hafa h1, p nested inn í .tilbodsvika */
-    }
+@media (min-width: 1200px) {
+  .frontpage-deal {
+    padding: 7em 0;
 
     h1 {
-        margin-top: 20%;
-        font-size: 5rem;
-        /* ath: line-height: calc(0.8*var(line-height)); */
+      font-size: 10em;
+    }
+  }
+
+  .triangle-deal {
+    border-color: transparent transparent #fff;
+    border-style: solid;
+    border-width: 0 0 50px 100vw;
+    height: 0;
+    width: 0;
+  }
+
+  .frontpage-grid {
+    margin: 6em 0;
+  }
+
+  .frontpage-spotlight {
+    justify-content: normal;
+  }
+
+  .frontpage-spotlight-image {
+    height: 17rem;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  .new,
+  .all-image {
+    grid-column: 3 / 7;
+  }
+
+  .all,
+  .new-image {
+    grid-column: 7 / 11;
+  }
+
+  .button-view {
+    align-self: baseline !important;
+  }
+
+  .triangle-top {
+    border-color: transparent transparent #e1cec2;
+    border-style: solid;
+    border-width: 0 0 50px 100vw;
+    height: 0;
+    width: 0;
+  }
+
+  .triangle-bottom {
+    border-color: #e1cec2 transparent transparent;
+    border-style: solid;
+    border-width: 50px 100vw 0 0;
+    height: 0;
+    width: 0;
+  }
+
+  .frontpage-products {
+    padding-bottom: 4em;
+
+    h2 {
+      grid-column: 3 / 13;
     }
 
-    p {
-        font-size: 2rem;
+    .product-card {
+      grid-column: span 3;
     }
+  }
+
+  .triangle-footer {
+    border-color: transparent transparent #3c2a1e;
+    border-style: solid;
+    border-width: 0 0 50px 100vw;
+    height: 0;
+    margin-top: -50px;
+    width: 0;
+  }
 }
-
-/* ath: Hefur það áhrif að raða media queries fyrir hvert css statemnt eftir hvort öðru eða á að safna öllum media queries neðst? */
-/* ath: ætti að hafa @media (max-width: 500) utan um mobile-first, eða láta vera */
-/* ath: hvernig er best að haga min og max gildum í @media */
-/* ath: should grid or flex be used for a grid on "mobile version" where only one column */
-
-
-/* Tilraun með Flexbox */
-
-@media (min-width: 500px) {
-        
-    .header {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-
-        margin: 0 .5rem;
-        width: 100%;
-    }
-    
-    .header__left {
-        display: flex;
-        width:30%;
-        
-        .svg__gear {
-            margin-right: 0.5rem;
-            // mynd stærð
-        }
-    }
-
-    .header__right {
-        display: flex;
-        align-items: center;
-    }
-
-    .header-right__svg {
-        padding-left: 1rem;
-    }
-
-    .header__center {
-        display: flex;
-
-        
-    }
-
-    .header.links {
-        display: none;
-    }
-
-    /* ath: hvernig á að halda menu icon hægra megin þegar details[open]? */
-    .header__right details[open] > summary {
-        position: absolute;
-        right: 0;
-    }
-
-    details li {
-        font-size: 3rem;
-        align-content: center;
-    }
-}
-
-
-
-/* --------------
-Tilraun með grid
----------------- */
-
-
-/* Naming grid-area before setting their layout */
-
-// .header {
-//     grid-area: header;
-// }
-
-// .main {
-//     grid-area: main;
-// }
-
-// .footer {
-//     grid-area: footer;
-// }
-
-
-// @media (min-width: 501px) {
-//     .wrapper {
-//         // ath: Af hverju hættir að vera responsive þegar wrapper er með grid (12, 1fr)?
-//         display: grid;
-//         grid-template-columns: repeat(12, 1fr);
-//         grid-template-rows: auto auto auto auto auto auto; // ath: þarf að setja grid-template-rows?
-//         gap: var(--gutter); /* þarf gap þegar grid-temlate-columns er 100%? */
-
-//         width: 100%;
-//         max-width: var(--max-width);
-//         margin: 0 auto;
-//         padding: 0.5rem;
-//     }
-
-//     .header {
-//         display: grid;
-//         grid-template-columns: repeat(12, 1fr);
-//         /* þarf að setja width og max-width hér þegar það er á wrapper (og á body)? */
-        
-//         grid-column: 1 / span 12;
-//         grid-row: 1;
-//         width: 100%;
-//         max-width: var(--max-width);
-//         margin-top: 0.25rem;
-//     }
-
-//     .header>.header__left { // hver er munurinn á selector bil . > ? Af hverju verður block við að setja . á milli?
-//         display: flex;
-//         grid-column: 1 / span 4;
-
-
-//         h2 {
-//             padding-left: 0.5rem;
-//         }
-        
-
-//     }
-
-//     header > .header__center {
-//         grid-column: 5 / span 4;
-
-        
-//         input {
-//             width: 20vw;
-//         }
-//     }
-
-//     header > .header__links {
-//         grid-column: 9 / span 3;
-
-//     }
-
-//     header > .header__right {
-//         display: flex;
-//         grid-column: 12 / span 1;
-
-//     }
-
-//     // .tilbodsvika {
-//     //     grid-column: 1 / span 1;
-//     //     grid-row: 1 / span 2;
-//     //     width: 100%;
-//     //     max-width: var(--max-width); /* af hverju þarf max-width þegar max-width er á .wrapper? */
-//     //     height: auto;
-
-
-        
-//     //         width: 100%;
-//     //         height: 50vh; /* ath: fæ ekki til að verða að réttri hæð */
-//     //         position: fixed;
-//     //         top: 0;
-//     //         left: 0;
-//     //         background-image: url(../images/wires.jpg);
-//     //         background-color: #cccccc;
-//     //         background-repeat: no-repeat;
-//     //         background-size: cover; /* background-size eða object-fit? */
-//     //         background-position: bottom;
-//     //         opacity: 0.5;
-
-
-//     // }
-
-//     // .tilbodsvika-lysing {
-//     //     grid-column: 1 / span 12;
-//     // }
-    
-// }
