@@ -8,12 +8,12 @@ npm run lint-scss<br />
 
 Fonts folder for fonts  
 Images folder for images  
-Pages folder have all html files for all other than index.html pages  
-Styles folder have all scss files that linked to styles.scss  
+Pages folder has all html files for all other than index.html pages  
+Styles folder has all scss files that linked to styles.scss  
 We have one scss file for every page and one for header and footer  
 
 
-Nemendur og framlag til verkefnisins:  
+Nemendur:  
 Yevhen Bilyi  
   https://github.com/YevhenBilyi  
   yeb1@hi.is  
