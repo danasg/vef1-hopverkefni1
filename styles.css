@@ -146,11 +146,7 @@ header label::before {
 }
 
 .header-cart p {
-<<<<<<< HEAD
-  background-color: #6F4E37;
-=======
   background-color: #6f4e37;
->>>>>>> 53d1b0dd1c08a68ff3a2f7cb5a7ce1f2caa7ca8b
   border-radius: 50%;
   bottom: 0;
   color: #fff;
@@ -161,11 +157,7 @@ header label::before {
 }
 
 footer {
-<<<<<<< HEAD
-  background-color: #3C2A1E;
-=======
   background-color: #3c2a1e;
->>>>>>> 53d1b0dd1c08a68ff3a2f7cb5a7ce1f2caa7ca8b
   color: #fff;
 }
 
@@ -174,11 +166,7 @@ footer h2 {
 }
 
 .footer-p {
-<<<<<<< HEAD
-  border-top: 1px solid #6F4E37;
-=======
   border-top: 1px solid #6f4e37;
->>>>>>> 53d1b0dd1c08a68ff3a2f7cb5a7ce1f2caa7ca8b
   margin: auto;
   text-align: center;
 }
@@ -203,196 +191,6 @@ header a {
     margin: 0 2em;
   }
 }
-<<<<<<< HEAD
-/* Að mestu byggt á sýnilausn við verkefni 6 í vefforritun */
-/* ath: skiptir máli í hvaða röð base og config eru, þ.e. hvort breytur í config þurfi að koma fyrst? */
-/* -------------------------------------------------------------------------- */
-/*                        @import 'styles/config.scss'                        */
-/* -------------------------------------------------------------------------- */
-/* ath: skoða hvernig eigi að tengja font rétt */
-/* ath: af hverju þarf að setja scss breytu í css breytu með "interpolation", í stað þess að skrifa bara beint í? sbr texti osk: "Skilgreinum breytur sem sass breytur, en gerum einnig aðgengilegar sem css breytur" */
-:root {
-  --spacing: 1rem;
-  --max-width: 1440px;
-  --width: 100%;
-  --color-text: #222;
-  --color-text-secondary: #222;
-  --color-link: #069;
-  --color-border: #ccc;
-  --font-size: 16px;
-  --font-family-base: Lato, Helvetica, Arial, sans-serif;
-  --font-family-heading: Lato, Georgia, serif;
-  --columns: 12;
-  --gutter: 30px;
-  --offset: 20px;
-}
-
-/* -------------------------------------------------------------------------- */
-/*                        @import 'styles/base.scss'                        */
-/* -------------------------------------------------------------------------- */
-/* „reset“ til að fjarlægja margin og padding af öllu */
-* {
-  margin: 0;
-  padding: 0;
-}
-
-/* bordex-box á allt */
-html {
-  box-sizing: border-box;
-  width: 100%;
-  /* ath: hvaða áhrif hefur að setja widht og max-width á html element? */
-  justify-content: center;
-}
-
-/* og látum erfast niður */
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
-}
-
-body {
-  width: 100%;
-  max-width: var(--max-width);
-  margin: 0 auto;
-  /* á frekar að nota scss breytur hér með interpolation? (skiptir máli hvaða röð config og base scss eru? */
-  /* ath: ætti að setja max-with á body eða wrapper */
-}
-
-/* -------------------------------------------------------------------------- */
-/*              uppsetning er mobile first með media query nested             */
-/* -------------------------------------------------------------------------- */
-/* -------------------------------------------------------------------------- */
-/*                       @import 'styles/layout.scss'                       */
-/* -------------------------------------------------------------------------- */
-@media (min-width: 500px) {
-  h1 {
-    font-size: calc(2*$font-size);
-  }
-}
-.wrapper {
-  display: flex;
-  flex-direction: column;
-}
-@media (min-width: 500px) {
-  .wrapper {
-    flex-direction: row;
-  }
-}
-
-.header {
-  display: flex;
-  padding: 0.5rem 0.55rem 0;
-  /* rem=16px, figma sýnir 10 px */
-  justify-content: space-between;
-}
-@media (min-width: 500px) {
-  .header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 0.5rem;
-    width: 100%;
-  }
-}
-
-.header__left {
-  display: flex;
-}
-@media (min-width: 500px) {
-  .header__left {
-    display: flex;
-    width: 30%;
-  }
-  .header__left .svg__gear {
-    margin-right: 0.5rem;
-  }
-}
-
-.header__right {
-  display: flex;
-  align-items: center;
-}
-@media (min-width: 500px) {
-  .header__right {
-    display: flex;
-    align-items: center;
-  }
-}
-
-.header-right__svg {
-  padding-left: 1rem;
-}
-@media (min-width: 500px) {
-  .header-right__svg {
-    padding-left: 1rem;
-  }
-}
-
-.header__center {
-  display: none;
-}
-@media (min-width: 500px) {
-  .header__center {
-    display: flex;
-  }
-}
-
-.header .links {
-  display: none;
-}
-@media (min-width: 500px) {
-  .header .links {
-    display: flex;
-  }
-}
-
-/* ath: hvernig á að halda menu icon hægra megin þegar details[open]? */
-.header__right details[open] > summary {
-  position: absolute;
-  right: 0;
-}
-
-details li {
-  font-size: 3rem;
-  align-content: center;
-}
-
-h1,
-p {
-  text-align: center;
-  align-items: center;
-}
-
-.main {
-  display: flex;
-  flex-wrap: nowrap;
-}
-
-.tilbodsvika__lysing {
-  display: flex;
-  width: 100%;
-  margin: 0 auto;
-}
-.tilbodsvika__lysing .text {
-  display: flex;
-  flex-direction: col;
-}
-.tilbodsvika__lysing .image img {
-  width: 100%;
-}
-
-/* ath: Hefur það áhrif að raða media queries fyrir hvert css statemnt eftir hvort öðru eða á að safna öllum media queries neðst? */
-/* ath: ætti að hafa @media (max-width: 500) utan um mobile-first, eða láta vera */
-/* ath: hvernig er best að haga min og max gildum í @media */
-/* ath: should grid or flex be used for a grid on "mobile version" where only one column */
-/* Tilraun með Flexbox */
-/* --------------
-Tilraun með grid
----------------- */
-/* Naming grid-area before setting their layout */
-=======
 .frontpage-grid {
   display: grid;
   gap: 30px;
@@ -579,7 +377,6 @@ Tilraun með grid
     width: 0;
   }
 }
->>>>>>> 53d1b0dd1c08a68ff3a2f7cb5a7ce1f2caa7ca8b
 .product-order h1 {
   font-size: 60px;
   padding-left: 0.4em;
@@ -693,61 +490,6 @@ Tilraun með grid
     margin-right: 1em;
   }
 }
-<<<<<<< HEAD
-a {
-  color: #000;
-  text-decoration: none;
-}
-
-.nyjarvorur h1 {
-  font-family: Lato;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 60px;
-  line-height: 80px;
-}
-
-.radaeftir h3 {
-  font-family: Lato;
-}
-
-.price {
-  font-weight: 700;
-  font-family: Lato;
-}
-
-.button-buy {
-  align-items: center;
-  border: 1px solid #6f4e37;
-  border-radius: 5px;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  margin-top: 1em;
-  padding: 10px 15px;
-  font-family: Lato;
-}
-.button-buy a {
-  color: #3c2a1e;
-  font-weight: 700;
-  font-family: Lato;
-}
-
-.labels {
-  align-items: flex-start;
-  display: flex;
-  flex-direction: row;
-  margin: 1em 0;
-  font-family: Lato;
-}
-.labels p {
-  background-color: #e1cec2;
-  border-radius: 5px;
-  flex: none;
-  flex-grow: 0;
-  margin: 0 10px 0 0;
-  padding: 5px;
-=======
 .nyjarvorur h1 {
   font-size: 60px;
   font-style: normal;
@@ -762,7 +504,6 @@ a {
 
 .list-labels .labels {
   margin-left: 1rem;
->>>>>>> 53d1b0dd1c08a68ff3a2f7cb5a7ce1f2caa7ca8b
 }
 
 .product-site {
@@ -775,40 +516,13 @@ a {
   gap: 30px;
   grid-template-columns: repeat(12, 1fr);
   margin: 0 auto;
-<<<<<<< HEAD
-  padding-bottom: 2em;
-=======
   padding: 2em 0;
->>>>>>> 53d1b0dd1c08a68ff3a2f7cb5a7ce1f2caa7ca8b
   width: calc(100% - (2 * 20px));
 }
 .product-site-grid .detail-card-grid {
   grid-column: span 12;
 }
 
-<<<<<<< HEAD
-.product-card {
-  background-color: #fff;
-  border-radius: 5px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 1em;
-}
-.product-card img {
-  height: 14em;
-  object-fit: cover;
-  width: 100%;
-}
-.product-card .product-header {
-  font-size: 1.5em;
-  font-weight: 400;
-  margin-top: 1em;
-  font-family: Lato;
-}
-
-=======
->>>>>>> 53d1b0dd1c08a68ff3a2f7cb5a7ce1f2caa7ca8b
 @media (min-width: 700px) {
   .product-site-grid .detail-card-grid {
     grid-column: span 6;
@@ -848,19 +562,6 @@ a {
     height: 10em;
   }
 }
-<<<<<<< HEAD
-.product-detail-header {
-  padding: 1em 1em 0;
-  position: relative;
-}
-@media (min-width: 803px) {
-  .product-detail-header {
-    width: 100%;
-  }
-}
-
-=======
->>>>>>> 53d1b0dd1c08a68ff3a2f7cb5a7ce1f2caa7ca8b
 a {
   color: #000;
   text-decoration: none;
