@@ -74,7 +74,6 @@ body {
     width: 100%;
     max-width: var(--max-width);
     margin: 0 auto;
-    background-color: blue;
 
     /* á frekar að nota scss breytur hér með interpolation? (skiptir máli hvaða röð config og base scss eru? */
     /* ath: ætti að setja max-with á body eða wrapper */
@@ -257,6 +256,38 @@ details li {
         
     }
 }
+
+.product-cards  {
+    display: flex;
+    flex-direction: column;
+    background-color: #E1CEC2;
+    padding: 15px;
+
+    img {
+        width: 100%;
+        object-fit: contain;
+    }
+}
+
+/* Button styling */
+
+.button {
+    width: 477px;
+    height: 444px;
+    margin: 2rem auto 1.5rem auto;
+    
+    background-color: #6F4E37;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+/* ath: af hverju virkar þetta style-ing á button ekki? */
+.button a:link {
+    color: white;
+    text-decoration: none;
+}
+
 
 
 
