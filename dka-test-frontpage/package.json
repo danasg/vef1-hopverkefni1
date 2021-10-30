@@ -4,12 +4,12 @@
   "description": "Hópverkefni 1 í vefforritun 1",
   "main": "index.js",
   "scripts": {
-    "browser-sync": "browser-sync start --server --files index.html *.css",
-    "sass": "dart-sass styles-frontpage.scss styles-frontpage.css",
-    "sass-watch": "dart-sass --watch styles-frontpage.scss styles-frontpage.css",
-    "dev": "concurrently npm:sass npm:sass-watch npm:browser-sync",
-    "lint-scss": "stylelint styles-frontpage.scss ./**/*.scss",
-    "lint-css": "stylelint styles-frontpage.css ./**/*.css"
+    "browser-sync-dka": "browser-sync start --server --files ./dka-fronpage/index.html *.css",
+    "sass-dka": "dart-sass ./dka-fronpage/styles.scss ./dka-fronpage/styles.css",
+    "sass-watch-dka": "dart-sass --watch ./dka-fronpage/styles.scss ./dka-fronpage/styles.css",
+    "dev-dka": "concurrently npm:sass-dka npm:sass-watch-dka npm:browser-sync-dka",
+    "lint-scss-dka": "stylelint ./dka-fronpage/styles.scss ./**/*.scss",
+    "lint-css-dka": "stylelint ./dka-fronpage/styles.css ./**/*.css"
   },
   "repository": {
     "type": "git",

@@ -74,6 +74,7 @@ body {
     width: 100%;
     max-width: var(--max-width);
     margin: 0 auto;
+    background-color: blue;
 
     /* á frekar að nota scss breytur hér með interpolation? (skiptir máli hvaða röð config og base scss eru? */
     /* ath: ætti að setja max-with á body eða wrapper */
@@ -256,6 +257,10 @@ details li {
         
     }
 }
+
+
+
+
 
 .footer {
     width: 100%;
