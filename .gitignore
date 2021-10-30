@@ -28,3 +28,7 @@ styles.css.map
 # Mögulegar þýddar skrár fyrir production build
 build/
 dist/
+
+#test folder
+/dka-frontpage
+package.json
