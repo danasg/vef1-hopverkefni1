@@ -9,15 +9,7 @@
     "sass-watch": "dart-sass --watch styles.scss styles.css",
     "dev": "concurrently npm:sass npm:sass-watch npm:browser-sync",
     "lint-scss": "stylelint styles.scss ./**/*.scss",
-    "lint-css": "stylelint styles.css ./**/*.css",
-
-    "browser-sync-dka": "browser-sync start --server --files ./dka-frontpage/index.html *.css",
-    "sass-dka": "dart-sass ./dka-frontpage/styles.scss ./dka-frontpage/styles.css",
-    "sass-watch-dka": "dart-sass --watch ./dka-frontpage/styles.scss ./dka-frontpage/styles.css",
-    "dev-dka": "concurrently npm:sass-dka npm:sass-watch-dka npm:browser-sync-dka",
-    "lint-scss-dka": "stylelint ./dka-frontpage/styles.scss ./**/*.scss",
-    "lint-css-dka": "stylelint ./dka-frontpage/styles.css ./**/*.css"
-
+    "lint-css": "stylelint styles.css ./**/*.css"
   },
   "repository": {
     "type": "git",
