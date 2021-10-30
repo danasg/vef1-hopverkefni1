@@ -3,75 +3,110 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles-frontpage.css">
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="./styles.css">
     <title>Document</title>
 </head>
 
 <body>
-    <div class="header__background">
+  <div class="frontpage-background">
+  <div class="frontpage-background-blur">
+    <header>
+        <svg class ="svg__gear"width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M26.2269 16.5829C26.2269 16.1307 26.38 15.6784 26.38 15.0754C26.38 14.4724 26.38 14.0201 26.2269 13.5678L29.4404 11.005C29.7465 10.7035 29.7465 10.402 29.5934 10.1005L26.533 4.82412C26.38 4.67337 26.0739 4.52261 25.6148 4.67337L21.7893 6.1809C21.0242 5.57789 20.106 5.12563 19.1879 4.67337L18.5758 0.753769C18.7288 0.301508 18.2697 0 17.9637 0H11.8428C11.5367 0 11.0777 0.301508 11.0777 0.603015L10.4656 4.67337C9.54745 4.97487 8.78233 5.57789 7.8642 6.1809L4.19165 4.67337C3.73258 4.52261 3.42653 4.67337 3.12049 4.97487L0.0600316 10.2513C-0.0929912 10.402 0.0600316 10.8543 0.366077 11.1558L3.57956 13.5678C3.57956 14.0201 3.42653 14.4724 3.42653 15.0754C3.42653 15.6784 3.42653 16.1307 3.57956 16.5829L0.366077 19.1457C0.0600316 19.4472 0.0600316 19.7487 0.213054 20.0503L3.27351 25.3266C3.42653 25.4774 3.73258 25.6281 4.19165 25.4774L8.01722 23.9698C8.78233 24.5729 9.70047 25.0251 10.6186 25.4774L11.2307 29.397C11.2307 29.6985 11.5367 30 11.9958 30H18.1167C18.4228 30 18.8818 29.6985 18.8818 29.397L19.4939 25.4774C20.4121 25.0251 21.3302 24.5729 22.0953 23.9698L25.9209 25.4774C26.2269 25.6281 26.686 25.4774 26.839 25.1759L29.8995 19.8995C30.0525 19.598 30.0525 19.1457 29.7465 18.995L26.2269 16.5829ZM14.9032 20.3518C11.9958 20.3518 9.54745 17.9397 9.54745 15.0754C9.54745 12.2111 11.9958 9.799 14.9032 9.799C17.8107 9.799 20.259 12.2111 20.259 15.0754C20.259 17.9397 17.8107 20.3518 14.9032 20.3518Z" fill="black"/>
+        </svg>  
+    
+        <h2> <a href="../index.html">Tæknibúðin</a> </h2>
+        <div class="links">
+          <label for="input">
+            <input type="text" placeholder="Leit eftir heiti, vörunúmeri, lýsingu o.fl">
+          </label>
+          <a href="./pages/product-list.html">Nýjar vörur</a>
+          <a href="./pages/product-list.html">Tilboðs vörur</a>
+          <a href="./pages/product-list.html">Allar vörur</a>
+    
+        </div>
+    
+    
+        <div class="header-cart">
+           <a href="./pages/product-order.html"><svg  width="31" height="30" viewBox="0 0 31 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M9.27051 24C7.62051 24 6.27051 25.35 6.27051 27C6.27051 28.65 7.62051 30 9.27051 30C10.9205 30 12.2705 28.65 12.2705 27C12.2705 25.35 10.9205 24 9.27051 24ZM0.270508 0V3H3.27051L8.67051 14.4L6.57051 18C6.42051 18.45 6.27051 19.05 6.27051 19.5C6.27051 21.15 7.62051 22.5 9.27051 22.5H27.2705V19.5H9.87051C9.72051 19.5 9.57051 19.35 9.57051 19.2V19.05L10.9205 16.5H22.0205C23.2205 16.5 24.1205 15.9 24.5705 15L29.9705 5.25C30.2705 4.95 30.2705 4.8 30.2705 4.5C30.2705 3.6 29.6705 3 28.7705 3H6.57051L5.22051 0L0.270508 0ZM24.2705 24C22.6205 24 21.2705 25.35 21.2705 27C21.2705 28.65 22.6205 30 24.2705 30C25.9205 30 27.2705 28.65 27.2705 27C27.2705 25.35 25.9205 24 24.2705 24Z" fill="black"/>
+        </svg> 
+          <p>1</p></a>
+        </div>
+       
+        <details class="header-details" >
+        <summary> <div class ="menu-svg"><svg width="28" height="20" viewBox="0 0 28 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M2 4H26C27.104 4 28 3.104 28 2C28 0.896 27.104 0 26 0H2C0.896 0 0 0.896 0 2C0 3.104 0.896 4 2 4ZM26 8H2C0.896 8 0 8.896 0 10C0 11.104 0.896 12 2 12H26C27.104 12 28 11.104 28 10C28 8.896 27.104 8 26 8ZM26 16H2C0.896 16 0 16.896 0 18C0 19.104 0.896 20 2 20H26C27.104 20 28 19.104 28 18C28 16.896 27.104 16 26 16Z" fill="black"/>
+        </svg></div>  </summary>
+        <div class="details-menu">
+          <ul class="header-ul">
+            <li><a href="./pages/product-list.html">Nýjar vörur</a></li>
+            <li><a href="./pages/product-list.html">Tilboðs vörur</a></li>
+            <li><a href="./pages/product-list.html">Allar vörur</a></li>
+          </ul>
+          <label for="input">
+            <input type="text" placeholder="Leit eftir heiti, vörunúmeri, lýsingu o.fl">
+          </label>
+        </div>
+        
+        </details>
+      </header>
+
+      <div class="frontpage-deal">
         <h1>Tilboðsvika</h1>
-        <p>Keyptu græjurnar hjá okkur!</p>
+        <h2>Keyptu græjurnar hjá okkur!</h2>
+      </div>
+      <div class="triangle-deal"></div>
+  </div>
+  </div>
+  
+  <div class="frontpage-grid">
+    <div class="frontpage-spotlight new">
+      <h2>Nýjar vörur í hverri viku</h2>
+      <p>
+          Við fljúgum með nýjar vörur til landsins í hverri viku og bjóðum upp á frábært verð því
+          lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Donec sit amet elementum orci, ac feugiat mauris.
+      </p>
+      <div class="button-view">
+          <a href="./pages/product-list.html">SKOÐA NÝJAR VÖRUR</a>
+      </div>
     </div>
-    <div class="wrapper">
-        <header class="header">
-            <div class="header__left">
-                <svg class="svg__gear" width="30px" height="30px" viewbox="0 0 30 30" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" clip-rule="evenodd"
-                        d="M26.2269 16.5829C26.2269 16.1307 26.38 15.6784 26.38 15.0754C26.38 14.4724 26.38 14.0201 26.2269 13.5678L29.4404 11.005C29.7465 10.7035 29.7465 10.402 29.5934 10.1005L26.533 4.82412C26.38 4.67337 26.0739 4.52261 25.6148 4.67337L21.7893 6.1809C21.0242 5.57789 20.106 5.12563 19.1879 4.67337L18.5758 0.753769C18.7288 0.301508 18.2697 0 17.9637 0H11.8428C11.5367 0 11.0777 0.301508 11.0777 0.603015L10.4656 4.67337C9.54745 4.97487 8.78233 5.57789 7.8642 6.1809L4.19165 4.67337C3.73258 4.52261 3.42653 4.67337 3.12049 4.97487L0.0600316 10.2513C-0.0929912 10.402 0.0600316 10.8543 0.366077 11.1558L3.57956 13.5678C3.57956 14.0201 3.42653 14.4724 3.42653 15.0754C3.42653 15.6784 3.42653 16.1307 3.57956 16.5829L0.366077 19.1457C0.0600316 19.4472 0.0600316 19.7487 0.213054 20.0503L3.27351 25.3266C3.42653 25.4774 3.73258 25.6281 4.19165 25.4774L8.01722 23.9698C8.78233 24.5729 9.70047 25.0251 10.6186 25.4774L11.2307 29.397C11.2307 29.6985 11.5367 30 11.9958 30H18.1167C18.4228 30 18.8818 29.6985 18.8818 29.397L19.4939 25.4774C20.4121 25.0251 21.3302 24.5729 22.0953 23.9698L25.9209 25.4774C26.2269 25.6281 26.686 25.4774 26.839 25.1759L29.8995 19.8995C30.0525 19.598 30.0525 19.1457 29.7465 18.995L26.2269 16.5829ZM14.9032 20.3518C11.9958 20.3518 9.54745 17.9397 9.54745 15.0754C9.54745 12.2111 11.9958 9.799 14.9032 9.799C17.8107 9.799 20.259 12.2111 20.259 15.0754C20.259 17.9397 17.8107 20.3518 14.9032 20.3518Z"
-                        fill="black" />
-                </svg>
-                <h2><a href="./index.html">Tæknibúðin</a></h2>
+    <img class="frontpage-spotlight-image new-image" src="./images/airport.jpg">
+  </div>
+
+  <div class="triangle-top"></div>
+    <div class="frontpage-products">
+      <div class="frontpage-products-grid">
+        <h2>Nokkrar af nýjustu vörunum okkar</h2>
+
+        <div class="product-card">
+            <img src="./images/motherboard.jpg">
+            <a href="./pages/product-detail.html" class="product-header">Tæknilegt móðurborð</a>
+            <div class="labels">
+              <p>Nýtt</p>
+              <p>Takmarkað magn</p>
             </div>
-
-            <div class="header__center">
-                <label for="input">
-                    <input type="text" placeholder="Leit eftir heiti, vörunúmeri, lýsingu o.fl">
-                </label>
+            <p class="price">189.000 kr.</p>
+            <div class="button-buy">
+              <a href="./pages/product-order.html">SETJA Í KÖRFU</a>
             </div>
+        </div>
 
-            <div class="header__links">
-                <a href="./pages/product-list.html">Nýjar vörur</a>
-                <a href="./pages/product-list.html">Tilboðs vörur</a>
-                <a href="./pages/product-list.html">Allar vörur</a>
+        <div class="product-card">
+            <img src="./images/robot.jpg">
+            <a href="./pages/product-detail.html" class="product-header">Vinalegur vinnuróbot</a>
+            <div class="labels">
+              <p>Nýtt</p>
+              <p>Ekki fyrir börn</p>
             </div>
-
-            <div class="header__right">
-
-                <div class="header-right__svg cart">
-                    <a href="./product-order.html"><svg class="cart__svg" width="31" height="30" viewbox="0 0 31 30"
-                            fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M9.27051 24C7.62051 24 6.27051 25.35 6.27051 27C6.27051 28.65 7.62051 30 9.27051 30C10.9205 30 12.2705 28.65 12.2705 27C12.2705 25.35 10.9205 24 9.27051 24ZM0.270508 0V3H3.27051L8.67051 14.4L6.57051 18C6.42051 18.45 6.27051 19.05 6.27051 19.5C6.27051 21.15 7.62051 22.5 9.27051 22.5H27.2705V19.5H9.87051C9.72051 19.5 9.57051 19.35 9.57051 19.2V19.05L10.9205 16.5H22.0205C23.2205 16.5 24.1205 15.9 24.5705 15L29.9705 5.25C30.2705 4.95 30.2705 4.8 30.2705 4.5C30.2705 3.6 29.6705 3 28.7705 3H6.57051L5.22051 0L0.270508 0ZM24.2705 24C22.6205 24 21.2705 25.35 21.2705 27C21.2705 28.65 22.6205 30 24.2705 30C25.9205 30 27.2705 28.65 27.2705 27C27.2705 25.35 25.9205 24 24.2705 24Z"
-                                fill="black" />
-                        </svg>
-                        <p>1</p>
-                    </a>
-                </div>
-                <details class="header-right__svg">
-                    <summary>
-                        <div class="menu__svg">
-                            <svg width="28" height="20" viewbox="0 0 28 20" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M2 4H26C27.104 4 28 3.104 28 2C28 0.896 27.104 0 26 0H2C0.896 0 0 0.896 0 2C0 3.104 0.896 4 2 4ZM26 8H2C0.896 8 0 8.896 0 10C0 11.104 0.896 12 2 12H26C27.104 12 28 11.104 28 10C28 8.896 27.104 8 26 8ZM26 16H2C0.896 16 0 16.896 0 18C0 19.104 0.896 20 2 20H26C27.104 20 28 19.104 28 18C28 16.896 27.104 16 26 16Z"
-                                    fill="black" />
-                            </svg>
-
-                        </div>
-                    </summary>
-                    <ul>
-                        <li><a href="./product-list.html">Nýjar vörur</a></li>
-                        <li><a href="./product-list.html">Tilboðs vörur</a></li>
-                        <li><a href="./product-list.html">Allar vörur</a></li>
-                    </ul>
-                    <label for="input">
-                        <input type="text" placeholder="Leit eftir heiti, vörunúmeri, lýsingu o.fl.">
-                    </label>
-                </details>
+            <p class="price">1.499.990 kr.</p>
+            <div class="button-buy">
+              <a href="./product-order.html">SETJA Í KÖRFU</a>
             </div>
+<<<<<<< HEAD:dka-frontpageTest/frontpage.html
         </header>
 
         <main class="main">
@@ -92,113 +127,66 @@
                     <img src="./images/airport.jpg" size="50px" alt="">
                 </div>
 
+=======
+        </div>
+
+        <div class="product-card">
+            <img src="./images/matrix.jpg">
+            <a href="./pages/product-detail.html" class="product-header">Matrixið</a>
+            <div class="labels">
+              <p>Nýtt</p>
+              <p>Ekki fyrir róbóta</p>
             </div>
-
-            <div class="product-cards">
-                <h2>Nokkrar af nýjustu vörunum okkar</h2>
-                <div class="card">
-                    <img src="./images/motherboard.jpg" alt="">
-                    <h3>Tæknilegt móðurborð</h3>
-                    <div class="lager">
-                        <button>Nýtt</button>
-                        <button>Takmarkað magn</button>
-                    </div>
-                    <p>189.000 kr.</p>
-                    <button>SETJA Í KÖRVU</button>
-                </div>
-
-                <div class="card">
-                    <img src="./images/robot.jpg" alt="">
-                    <h3>Tæknilegt móðurborð</h3>
-                    <div class="lager">
-                        <button>Nýtt</button>
-                        <button>Takmarkað magn</button>
-                    </div>
-                    <p>1.499.990 kr.</p>
-                    <button>SETJA Í KÖRVU</button>
-                </div>
-
-                <div class="card">
-                    <img src="./images/matrix.jpg" alt="">
-                    <h3>Tæknilegt móðurborð</h3>
-                    <div class="lager">
-                        <button>Nýtt</button>
-                        <button>Takmarkað magn</button>
-                    </div>
-                    <p>299.999.999.499.990 kr.</p>
-                    <button>SETJA Í KÖRVU</button>
-                </div>
-
-                <div class="card">
-                    <img src="./images/robot.jpg" alt="">
-                    <h3>Tæknilegt móðurborð</h3>
-                    <div class="lager">
-                        <button>Nýtt</button>
-                        <button>Takmarkað magn</button>
-                    </div>
-                    <p>1.499.990 kr.</p>
-                    <button>SETJA Í KÖRVU</button>
-                </div>
+            <p class="price">299.999.999.499.990 kr.</p>
+            <div class="button-buy">
+              <a href="./product-order.html">SETJA Í KÖRFU</a>
+>>>>>>> 53d1b0dd1c08a68ff3a2f7cb5a7ce1f2caa7ca8b:index.html
             </div>
+        </div>
 
-            <div class="company-description">
-                <img src="./images/warehouse.jpg" alt="">
-                <div class="side">
-                    <h2><strong>Stærsta vöruhús </strong>á Íslandi</h2>
-                    <p>
-                        Vöruhúsið okkar er það stærsta á Íslandi og með fullt af vörum útum allt risus quis risus mattis
-                        sollicitudin. Donec egestas justo orci, in egestas quam molestie id.
-                    </p>
-                    <button class="button1"><a href="./pages/product-list.html">SKOÐA ALLAR VÖRUR</a></button>
-                </div>
+        <div class="product-card">
+            <img src="./images/robot.jpg">
+            <a href="./pages/product-detail.html" class="product-header">Vinalegur vinnuróbot</a>
+            <div class="labels">
+              <p>Nýtt</p>
+              <p>Ekki fyrir börn</p>
             </div>
-
-            <div class="product-cards">
-                <h2>Nokkur dæmi úr ótrúlega vöruúrvali okkar</h2>
-                <div class="card">
-                    <img src="./images/motherboard.jpg" alt="">
-                    <h3>Tæknilegt móðurborð</h3>
-                    <div class="lager">
-                        <button>Nýtt</button>
-                        <button>Takmarkað magn</button>
-                    </div>
-                    <p>189.000 kr.</p>
-                    <button>SETJA Í KÖRVU</button>
-                </div>
-
-                <div class="card">
-                    <img src="./images/robot.jpg" alt="">
-                    <h3>Tæknilegt móðurborð</h3>
-                    <div class="lager">
-                        <button>Nýtt</button>
-                        <button>Takmarkað magn</button>
-                    </div>
-                    <p>1.499.990 kr.</p>
-                    <button>SETJA Í KÖRVU</button>
-                </div>
-
-                <div class="card">
-                    <img src="./images/matrix.jpg" alt="">
-                    <h3>Tæknilegt móðurborð</h3>
-                    <div class="lager">
-                        <button>Nýtt</button>
-                        <button>Takmarkað magn</button>
-                    </div>
-                    <p>299.999.999.499.990 kr.</p>
-                    <button>SETJA Í KÖRVU</button>
-                </div>
-
-                <div class="card">
-                    <img src="./images/robot.jpg" alt="">
-                    <h3>Tæknilegt móðurborð</h3>
-                    <div class="lager">
-                        <button>Nýtt</button>
-                        <button>Takmarkað magn</button>
-                    </div>
-                    <p>1.499.990 kr.</p>
-                    <button>SETJA Í KÖRVU</button>
-                </div>
+            <p class="price">1.499.990 kr.</p>
+            <div class="button-buy">
+              <a href="./product-order.html">SETJA Í KÖRFU</a>
             </div>
+        </div>
+      </div>
+    </div>
+  <div class="triangle-bottom"></div>
+  
+  <div class="frontpage-grid">
+    <img class="frontpage-spotlight-image all-image"  src="./images/warehouse.jpg">
+    <div class="frontpage-spotlight all">
+      <h2>Stærsta vöruhús á Íslandi</h2>
+      <p>
+          Vöruhúsið okkar er það stærsta á Íslandi og með fullt af vörum útum allt risus quis risus mattis sollicitudin.
+          Donec egestas justo orci, in egestas quam molestie id. 
+      </p>
+      <div class="button-view">
+          <a href="./pages/product-list.html">SKOÐA ALLAR VÖRUR</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="triangle-top"></div>
+    <div class="frontpage-products">
+      <div class="frontpage-products-grid">
+        <h2>Nokkur dæmi úr ótrúlegu vöruúrvali okkar</h2>
+
+        <div class="product-card">
+            <img src="./images/robot.jpg">
+            <a href="./pages/product-detail.html" class="product-header">Vinalegur vinnuróbot</a>
+            <div class="labels">
+              <p>Nýtt</p>
+              <p>Ekki fyrir börn</p>
+            </div>
+<<<<<<< HEAD:dka-frontpageTest/frontpage.html
 
         </main>
 
@@ -232,11 +220,79 @@
         <a href="./pages/product-order.html">Pöntunarsíða</a>
 
 
+=======
+            <p class="price">1.499.990 kr.</p>
+            <div class="button-buy">
+              <a href="./product-order.html">SETJA Í KÖRFU</a>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="./images/motherboard.jpg">
+            <a href="./pages/product-detail.html" class="product-header">Tæknilegt móðurborð</a>
+            <div class="labels">
+              <p>Nýtt</p>
+              <p>Takmarkað magn</p>
+            </div>
+            <p class="price">189.000 kr.</p>
+            <div class="button-buy">
+              <a href="./pages/product-order.html">SETJA Í KÖRFU</a>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="./images/robot.jpg">
+            <a href="./pages/product-detail.html" class="product-header">Vinalegur vinnuróbot</a>
+            <div class="labels">
+              <p>Nýtt</p>
+              <p>Ekki fyrir börn</p>
+            </div>
+            <p class="price">1.499.990 kr.</p>
+            <div class="button-buy">
+              <a href="./product-order.html">SETJA Í KÖRFU</a>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="./images/matrix.jpg">
+            <a href="./pages/product-detail.html" class="product-header">Matrixið</a>
+            <div class="labels">
+              <p>Nýtt</p>
+              <p>Ekki fyrir róbóta</p>
+            </div>
+            <p class="price">299.999.999.499.990 kr.</p>
+            <div class="button-buy">
+              <a href="./product-order.html">SETJA Í KÖRFU</a>
+            </div>
+        </div>
+      </div>
+>>>>>>> 53d1b0dd1c08a68ff3a2f7cb5a7ce1f2caa7ca8b:index.html
     </div>
+  <div class="triangle-bottom"></div>
 
+  <div class="triangle-footer"></div>
+  <footer>
+    <div class="footer">
+      <div class="footer-divs">
+        <h2>OPNUNARTÍMI</h2>
+        <p>Opið alla virka daga frá 9:00–18:00</p>
+        <p>Opið á laugardögum frá 12:00–16:00</p>
+        <p>Lokað á sunnudögum</p>
+      </div>
+      <div class="footer-divs">
+        <h2>HAFÐU SAMBAND</h2>
+        <p>Skiptiborð: 234–4568</p>
+        <p>Tölvupóstur: thjonusta@example.org</p>
+      </div>
+      <div class="footer-divs">
+        <h2>ANNAÐ</h2>
+        <p>Rekja sendingu</p>
+        <p>Skilaréttur</p>
+        <p>Um okkur</p>
+        <p>Störf</p>
+      </div>
+    </div>
+    <p class="footer-p">© 2021 TÆKNIBÚÐIN — Allur réttur áskilinn</p>
+  </footer>
 </body>
-
-
-
-
 </html>
